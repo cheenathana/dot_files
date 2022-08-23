@@ -1,0 +1,64 @@
+# To include this file to bashrc
+# . /home/pb82/.pb82
+
+# Modifying PS color
+RED_B='\[\e[91m\]' 
+GREEN_B='\[\e[92m\]'
+BLUE_B='\[\e[94m\]' 
+WHITE_B='\[\e[97m\]' 
+CYAN_B='\[\e[96m\]' 
+MAUVE_B='\[\e[95m\]' 
+BLUE='\[\e[34m\]' 
+GREEN='\[\e[32m\]' 
+BROWN='\[\e[33m\]' 
+YELLOW='\[\e[93m\]'
+RED='\[\e[31m\]' 
+MAUVE='\[\e[35m\]' 
+CYAN='\[\e[36m\]' 
+WHITE='\[\e[37m\]' 
+END_COLOR='\[\e[m\]'
+
+BACKUP_PS1="[\u@\h \W]\\$ " 
+export PS1="[${BLUE}\u@\h${END_COLOR} ${GREEN}\W${END_COLOR}]\\$ " 
+
+
+# custom alias
+alias l="ls -CF"
+alias ll="ls -lFht"
+alias la="ls -lAFht"
+
+alias mv="mv -i"
+alias rm="rm -i"
+alias g="git"
+
+alias tmn="tmux new-session -s"
+alias tma="tmux attach-session -t"
+
+
+# Navigate up directories
+alias ..="cd .."
+alias ..2="cd ../.."
+alias ..3="cd ../../.."
+alias ..4="cd ../../../.."
+alias ..5="cd ../../../../.."
+
+
+# Creating & navigating to the dir at same time
+function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
+
+
+# Autocorrect mistyped directory name
+shopt -s cdspell
+
+
+# CDPATH for faster navigation without going to actual parent paths
+CODE="/home/aloy/Vault/drill"
+CEMETERY="/home/aloy/Vault/archive30"
+BASE="/home/aloy/Vault"
+export CDPATH=.:~:$CODE:$CEMETERY:$BASE
+
+
+# Displays ANSCII art & system info(make sure this stays at the end of file)
+if command -V "neofetch" &> /dev/null; then
+   neofetch
+fi
