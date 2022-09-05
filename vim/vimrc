@@ -19,6 +19,7 @@ syntax on
 " ~/.vim/after/ftplugin/*.vim location. These will added over the
 " pre-defined rules
 
+
 " -----------------------
 " VIM-PLUGIN LIST
 " -----------------------
@@ -29,8 +30,13 @@ call plug#begin()
 " Colorschemes
 Plug 'sainnhe/everforest'                 " Everforest - green based colorscheme     
 Plug 'kristijanhusak/vim-hybrid-material'
+Plug 'cocopon/iceberg.vim'
+Plug 'arcticicestudio/nord-vim'
+Plug 'scheakur/vim-scheakur'
+Plug 'Badacadabra/vim-archery'
 
 Plug 'preservim/nerdtree'       " NerdTree install
+Plug 'jiangmiao/auto-pairs'     " Insert/delete brackets, parens, quotes in pair
 
 call plug#end()
 
@@ -38,8 +44,12 @@ call plug#end()
 " -----------------------------
 " NERD-TREE CONFIGURATIONS
 " -----------------------------
-" Open/Close Nerd tree CTRL-n
-nmap <C-n> :NERDTreeToggle<CR>
+let NERDTreeShowBookmarks = 1   " Show the bookmarks table
+let NERDTreeShowHidden = 1      " Show hidden files
+let NERDTreeShowLineNumbers = 0 " Hide line numbers
+let NERDTreeMinimalMenu = 1     " Use the minimal menu (m)
+let NERDTreeWinPos = 'left'     " Panel opens on the left side
+let NERDTreeWinSize = 27        " Set panel width to 31 columns
 
 " Start NERDTree whenever vim openes and leave the cursor in it.
 " autocmd VimEnter * NERDTree
@@ -57,7 +67,7 @@ autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTa
 " -------------------------------
 " VIM GENERAL CONFIGURATIONS
 " -------------------------------
-colorscheme everforest
+colorscheme nord
 set background=dark       " Setting colorscheme mode
 
 set cursorline            " Highlight current line
@@ -77,6 +87,21 @@ set backspace=indent,eol,start
 " file has not yet saved
 set hidden
 
+" expandtab  - enter spaces when TAB is pressed
+" tabstop    - column size to represent TAB
+" shiftwidth - no of spaces to use for indentation
+" autoindent - copy indent from curent line when starting new line
+" smartindent- works for c files, smarter version of autointent
+"            - dont use it when using file type based indentation
+" softtabstop- when hitting backspace define how many spaces to delete
+"
+" To turn off any options enabled by set keyword, just prefix the parameter 
+" with "no" EX: set nonumber, set noignorecase
+
+
+" --------------------------
+" ALTERNATE KEY MAPPING
+" --------------------------
 " Paste mode - used to turn of the autoindent feature to prevent
 " unnecessary indentation while pasting code into vi
 set pastetoggle=<F2>
@@ -93,13 +118,8 @@ nnoremap <C-K> <C-Y>
 nnoremap <C-L> <C-W>l
 nnoremap <C-H> <C-W>h
 
-" expandtab  - enter spaces when TAB is pressed
-" tabstop    - column size to represent TAB
-" shiftwidth - no of spaces to use for indentation
-" autoindent - copy indent from curent line when starting new line
-" smartindent- works for c files, smarter version of autointent
-"            - dont use it when using file type based indentation
-" softtabstop- when hitting backspace define how many spaces to delete
-"
-" To turn off any options enabled by set keyword, just prefix the parameter 
-" with "no" EX: set nonumber, set noignorecase
+" Open/Close Nerd tree CTRL-n
+nmap <C-n> :NERDTreeToggle<CR>
+
+
+
