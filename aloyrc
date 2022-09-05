@@ -19,7 +19,7 @@ WHITE='\[\e[37m\]'
 END_COLOR='\[\e[m\]'
 
 BACKUP_PS1="[\u@\h \W]\\$ " 
-export PS1="[${BLUE}\u@\h${END_COLOR} ${GREEN}\W${END_COLOR}]\\$ " 
+export PS1="[${BLUE_B}\u@\h${END_COLOR} ${GREEN}\W${END_COLOR}]\\$ " 
 
 
 # custom alias
@@ -52,10 +52,9 @@ shopt -s cdspell
 
 
 # CDPATH for faster navigation without going to actual parent paths
-CODE="/home/aloy/Vault/drill"
-CEMETERY="/home/aloy/Vault/archive30"
-BASE="/home/aloy/Vault"
-export CDPATH=.:~:$CODE:$CEMETERY:$BASE
+ARCHIVES="/home/voodoo/Crypt/catacomb"
+BASE="/home/voodoo/Crypt"
+export CDPATH=.:~:$BASE:$ARCHIVES
 
 
 # Displays ANSCII art & system info(make sure this stays at the end of file)

@@ -2,7 +2,7 @@
 	defaultBranch = main
 [core]
         editor = vi
-	excludesfile = /home/aloy/.gitignore
+	excludesfile = /home/voodoo/.gitignore
 [color]
         diff = auto
 	status = auto

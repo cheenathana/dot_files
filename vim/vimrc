@@ -7,24 +7,6 @@ let $RC="$HOME/.vim/vimrc"
 
 set t_Co=256              " Enable 256 color support
 set nocompatible          " Disable old vi compatibility
-set cursorline            " Highlight current line
-set number                " Show line numbers
-set numberwidth=1         " Set line number width (default is 4)
-
-set ignorecase            " Ignore case while searching
-set hlsearch              " Highlight matched keyword in the search
-set incsearch             " Show partial match while searching
-set smartcase             " use case if any caps used
-
-colorscheme badwolf       " Setting colorscheme
-set background=dark       " Setting colorscheme mode
-
-" To fix not-working backspace key in insert mode
-set backspace=indent,eol,start
-
-" To fix the error thrown while opening a new file when changes in the current
-" file has not yet saved
-set hidden
 
 " filetype - will try to recognize type of file and set 'filetype' option
 " plugin   - to load plugins for specific file type
@@ -37,42 +19,25 @@ syntax on
 " ~/.vim/after/ftplugin/*.vim location. These will added over the
 " pre-defined rules
 
-" expandtab  - enter spaces when TAB is pressed
-" tabstop    - column size to represent TAB
-" shiftwidth - no of spaces to use for indentation
-" autoindent - copy indent from curent line when starting new line
-" smartindent- works for c files, smarter version of autointent
-"            - dont use it when using file type based indentation
-" softtabstop- when hitting backspace define how many spaces to delete
-"
-" To turn off any options enabled by set keyword, just prefix the parameter 
-" with "no" EX: set nonumber, set noignorecase
-
-" Remapping scrolling one line at a time
-" Rather than pressing CTRL-E to scroll use CTRL-J
-nnoremap <C-J> <C-E>
-nnoremap <C-K> <C-Y>
-
-" Remapping movement keys b/w splits in vim
-" Rather than presing CTRL-W L now press CTRL-L
-" nnoremap <C-J> <C-W>j
-" nnoremap <C-K> <C-W>k
-nnoremap <C-L> <C-W>l
-nnoremap <C-H> <C-W>h
-
-" Paste mode is used to turn of the autoindent feature to prevent unnecessary
-" indentation of code while pasting code into vi
-set pastetoggle=<F2>
-
+" -----------------------
+" VIM-PLUGIN LIST
+" -----------------------
 " PlugInstall or PlugUpdate - to update/install plugin
 " PlugUpgrade               - to update vim-plug
 call plug#begin()
-Plug 'preservim/nerdtree'               " NerdTree install
+
+" Colorschemes
+Plug 'sainnhe/everforest'                 " Everforest - green based colorscheme     
+Plug 'kristijanhusak/vim-hybrid-material'
+
+Plug 'preservim/nerdtree'       " NerdTree install
 
 call plug#end()
 
 
-""""" NERD-TREE CONFIGURATIONS """""
+" -----------------------------
+" NERD-TREE CONFIGURATIONS
+" -----------------------------
 " Open/Close Nerd tree CTRL-n
 nmap <C-n> :NERDTreeToggle<CR>
 
@@ -89,3 +54,52 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
 
+" -------------------------------
+" VIM GENERAL CONFIGURATIONS
+" -------------------------------
+colorscheme everforest
+set background=dark       " Setting colorscheme mode
+
+set cursorline            " Highlight current line
+set number                " Show line numbers
+set numberwidth=1         " Set line number width (default is 4)
+set mouse=a               " Mouse drag/resize the split windows
+
+set ignorecase            " Ignore case while searching
+set hlsearch              " Highlight matched keyword in the search
+set incsearch             " Show partial match while searching
+set smartcase             " use case if any caps used
+
+" To fix not-working backspace key in insert mode
+set backspace=indent,eol,start
+
+" Fix error thrown while opening new file and changes in the current
+" file has not yet saved
+set hidden
+
+" Paste mode - used to turn of the autoindent feature to prevent
+" unnecessary indentation while pasting code into vi
+set pastetoggle=<F2>
+
+" Remapping scrolling one line at a time
+" Rather than pressing CTRL-E to scroll use CTRL-J
+nnoremap <C-J> <C-E>
+nnoremap <C-K> <C-Y>
+
+" Remapping movement keys b/w splits in vim
+" Rather than presing CTRL-W L now press CTRL-L
+" nnoremap <C-J> <C-W>j
+" nnoremap <C-K> <C-W>k
+nnoremap <C-L> <C-W>l
+nnoremap <C-H> <C-W>h
+
+" expandtab  - enter spaces when TAB is pressed
+" tabstop    - column size to represent TAB
+" shiftwidth - no of spaces to use for indentation
+" autoindent - copy indent from curent line when starting new line
+" smartindent- works for c files, smarter version of autointent
+"            - dont use it when using file type based indentation
+" softtabstop- when hitting backspace define how many spaces to delete
+"
+" To turn off any options enabled by set keyword, just prefix the parameter 
+" with "no" EX: set nonumber, set noignorecase
