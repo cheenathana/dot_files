@@ -34,6 +34,8 @@ Plug 'cocopon/iceberg.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'scheakur/vim-scheakur'
 Plug 'Badacadabra/vim-archery'
+Plug 'gruvbox-community/gruvbox'
+
 
 Plug 'preservim/nerdtree'       " NerdTree install
 Plug 'jiangmiao/auto-pairs'     " Insert/delete brackets, parens, quotes in pair
@@ -67,8 +69,11 @@ autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTa
 " -------------------------------
 " VIM GENERAL CONFIGURATIONS
 " -------------------------------
-colorscheme nord
+colorscheme gruvbox
 set background=dark       " Setting colorscheme mode
+
+" Make the background transparent
+" highlight Normal guibg=NONE ctermbg=NONE
 
 set cursorline            " Highlight current line
 set number                " Show line numbers
@@ -79,6 +84,8 @@ set ignorecase            " Ignore case while searching
 set hlsearch              " Highlight matched keyword in the search
 set incsearch             " Show partial match while searching
 set smartcase             " use case if any caps used
+
+set scrolloff=8           " Set min number of lines to keep up while scrolling
 
 " To fix not-working backspace key in insert mode
 set backspace=indent,eol,start
@@ -120,6 +127,3 @@ nnoremap <C-H> <C-W>h
 
 " Open/Close Nerd tree CTRL-n
 nmap <C-n> :NERDTreeToggle<CR>
-
-
-
