@@ -43,7 +43,7 @@ tags
 *.ko
 *.obj
 *.elf
-
+bin
 # Linker output
 *.ilk
 *.map
@@ -52,6 +52,7 @@ tags
 # Precompiled Headers
 *.gch
 *.pch
+build/
 
 # Libraries
 *.lib

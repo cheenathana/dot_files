@@ -69,7 +69,7 @@ autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTa
 " -------------------------------
 " VIM GENERAL CONFIGURATIONS
 " -------------------------------
-colorscheme gruvbox
+colorscheme nord
 set background=dark       " Setting colorscheme mode
 
 " Make the background transparent
@@ -104,6 +104,15 @@ set hidden
 "
 " To turn off any options enabled by set keyword, just prefix the parameter 
 " with "no" EX: set nonumber, set noignorecase
+
+
+" ---------------------------------
+" SETTING CODE FOLDING OPTIONS
+" ---------------------------------
+" Automatically save the created folding
+autocmd BufWinLeave *.* mkview
+" Automatically load saved folds if it exists
+autocmd BufWinEnter *.* silent loadview
 
 
 " --------------------------
