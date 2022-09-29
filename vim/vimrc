@@ -94,6 +94,12 @@ set backspace=indent,eol,start
 " file has not yet saved
 set hidden
 
+" Setting a common dir to hold all swap files
+" 'directory' option contains list of path which vim tries to save swap
+" ^= shorthand for :set
+" // use absolute path while creating swap files to avoid collisions
+set directory^=$HOME/.vim/swap// 
+
 " expandtab  - enter spaces when TAB is pressed
 " tabstop    - column size to represent TAB
 " shiftwidth - no of spaces to use for indentation
