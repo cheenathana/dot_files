@@ -28,7 +28,7 @@ syntax on
 call plug#begin()
 
 " Colorschemes
-Plug 'sainnhe/everforest'                 " Everforest - green based colorscheme     
+Plug 'sainnhe/everforest'     " Everforest - green based colorscheme
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'cocopon/iceberg.vim'
 Plug 'arcticicestudio/nord-vim'

@@ -23,7 +23,7 @@ export PS1="[${BLUE_B}\u@\h${END_COLOR} ${GREEN}\W${END_COLOR}]\\$ "
 
 
 # custom alias
-alias l="ls -CF"
+alias l="ls -CF --hyperlink=auto"
 alias ll="ls -lFht"
 alias la="ls -lAFht"
 
